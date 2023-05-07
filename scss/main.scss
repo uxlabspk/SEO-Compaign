@@ -1,0 +1,286 @@
+@import './variables';
+@import './mixins';
+@import './functions';
+
+
+body {
+    margin: 0px;
+    font-family: "Avenir";
+    background-color: $white-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $heading-color;
+}
+
+hr {
+    margin-top: 60px;
+}
+
+
+.navbar {
+    width: 100%;
+    height: 63px;
+    background-color: $white-color;
+
+    li {
+        display: inline-block;
+    }
+}
+
+.nav-items {
+    @include flex(row, space-between, center);
+}
+
+.navbar-container {
+    @include flex(row, space-between, center);
+    margin: 0% 6% 0% 6%;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: $link-color;
+    margin-right: 12px;
+}
+
+.active {
+    font-weight: setFontWeight(medium);
+    color: $primary-color;
+}
+
+.signupBtn {
+    @include btn(transparent, $primary-color, auto, 28px, setFontWeight(bold), 2px, 0px);
+
+    &:hover {
+        @include btn($white-color, $primary-color, auto, 28px, setFontWeight(bold), 2px, 6px);
+        border-color: $primary-color;
+    }
+
+    &:active {
+        @include btn($primary-color, $white-color, auto, 28px, setFontWeight(bold), 2px, 6px);
+    }
+}
+
+.contactBtn {
+    @include btn($primary-color, $white-color, auto, 28px, setFontWeight(bold), 1px, 6px);
+
+    &:hover {
+        opacity: 0.70;
+    }
+}
+
+.container {
+    margin: 0% 6% 0% 6%;
+}
+
+.hero {
+    @include flex(row, space-between, center);
+    height: auto;
+
+    .hero-h1 {
+        font-size: 42px;
+    }
+
+    .hero-p {
+        color: $secondary-color;
+        font-size: 18px;
+        text-align: justify;
+    }
+
+    .blue-h1 {
+        color: $primary-color;
+    }
+
+    .hero_img {
+        width: 500px;
+        height: 500px;
+    }
+}
+
+.row {
+    @include flex(row, flex-start, center);
+
+    button {
+        margin: 0px 12px 0px 0px;
+    }
+
+    .primaryBtn {
+        @include btn($primary-color, $white-color, 140px, 36px, setFontWeight(bold), 1px, 6px);
+
+        &:hover {
+            opacity: 0.75;
+        }
+    }
+
+    .secondaryBtn {
+        @include btn($white-color, $primary-color, 150px, 36px, setFontWeight(bold), 2px, 6px);
+        border-color: $primary-color;
+
+        &:hover {
+            @include btn($primary-color, $white-color, 150px, 36px, setFontWeight(bold), 2px, 6px);
+        }
+
+        &:active {
+            @include btn($white-color, $primary-color, 140px, 36px, setFontWeight(bold), 2px, 6px);
+            border-color: $primary-color;
+        }
+    }
+}
+
+.col-6 {
+    max-width: 50%;
+}
+
+.partners-row {
+    @include flex(row, space-between, center);
+
+    background-color: $div-color;
+    padding: 0px 60px 0px 60px;
+    margin-bottom: 28px;
+    border-radius: 8px;
+    height: 250px;
+
+    img {
+        width: 100px;
+    }
+}
+
+.about-div {
+    @include flex(column, flex-start, center);
+
+
+    padding: 60px 0px 60px 0px;
+    margin-bottom: 28px;
+    border-radius: 8px;
+
+    text-align: center;
+
+    .heading-div {
+        width: 600px;
+    }
+
+
+}
+
+.card-div {
+    @include flex(row, space-between, center);
+}
+
+.card {
+    @include card();
+
+    img {
+        width: 180px;
+    }
+
+    span {
+        margin-top: 22px;
+        font-size: 22px;
+        font-weight: setFontWeight(bold);
+        text-align: left;
+    }
+
+    p {
+        color: $secondary-color;
+        font-size: 16px;
+        text-align: left;
+    }
+}
+
+.help {
+    @include flex(column, space-between, center);
+    background-color: $primary-color;
+    border-radius: 8px;
+    margin: 18px 0px 18px 0px;
+    padding: 35px;
+
+    div {
+        width: 420px;
+        text-align: center;
+    }
+
+    h1 {
+        color: $white-color;
+    }
+
+    button {
+        @include btn($heading-color, $white-color, 160px, 36px, setFontWeight(bold), 1px, 6px);
+    }
+}
+
+.footer {
+    @include flex(row, space-between, center);
+    background-color: $div-color;
+    margin-top: 60px;
+    padding-top: 60px;
+}
+
+.footer-items {
+    @include flex(row, space-between, flex-start);
+}
+
+.col {
+
+    @include flex(column, space-between, flex-start);
+    width: 230px;
+
+    a {
+        color: $link-color;
+        text-decoration: none;
+
+        &:hover {
+            color: $heading-color
+        }
+    }
+
+    p {
+        color: $secondary-color;
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .row {
+        @include flex(row, space-between, flex-start);
+
+        width: 220px;
+
+        .cbx {
+            background-color: $div-bg-color;
+            width: auto;
+            height: auto;
+            padding: 10px;
+            border-radius: 30px;
+            color: $secondary-color;
+
+            &:hover {
+                background-color: $primary-color;
+                color: $white-color;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.copyright {
+    @include flex(row, space-between, center);
+
+    font-size: 14px;
+    color: $secondary-color;
+    padding-top: 5px;
+    padding-bottom: 10px;
+
+    a {
+        color: $link-color;
+        text-decoration: none;
+        margin-right: 30px;
+
+        &:hover {
+            color: $heading-color
+        }
+    }
+}

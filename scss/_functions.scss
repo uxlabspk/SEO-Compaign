@@ -1,0 +1,9 @@
+
+@import './variables';
+
+
+
+@function setFontWeight($weight)
+{
+    @return (map-get($font-weight, $weight));
+}
